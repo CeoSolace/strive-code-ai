@@ -32,11 +32,10 @@ pygments==2.18.0
 gtts==2.5.3
 pydub==0.25.1
 
-# Jupyter notebooks
-nbformat==5.3.1
+# Jupyter notebooks compatible with Python 3.13
+nbformat==5.10.4
 nbconvert==7.16.4
-# Optional: full Jupyter CLI if needed
-jupyter==1.1.1
+jupyter==1.1.1  # optional, CLI if needed
 
 # Git interaction
 gitpython==3.1.43
