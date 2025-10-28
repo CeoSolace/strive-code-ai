@@ -32,12 +32,12 @@ pygments==2.18.0
 gtts==2.5.3
 pydub==0.25.1
 
-# Jupyter notebooks compatible with Python 3.13
+# Jupyter
 nbformat==5.10.4
 nbconvert==7.16.4
-jupyter==1.1.1  # optional, CLI if needed
+jupyter==1.1.1
 
-# Git interaction
+# Git
 gitpython==3.1.43
 
 # Testing
@@ -47,3 +47,10 @@ pytest-asyncio==0.24.0
 # File uploads
 aiofiles==24.1.0
 python-multipart==0.0.9
+
+# FREE LOCAL LLM (required for full AI generation)
+transformers==4.44.2
+torch==2.4.1
+bitsandbytes==0.44.0
+accelerate==0.34.2
+sentencepiece==0.2.0
