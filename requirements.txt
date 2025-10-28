@@ -16,13 +16,13 @@ pdfkit==1.0.0
 beautifulsoup4==4.12.3
 lxml==5.3.0
 
-# Data processing
-numpy==2.1.1
+# Data processing (unpinned for 3.13 compat)
+numpy
 pandas==2.2.3
 openpyxl==3.1.5
 sympy==1.13.2
 
-# Diagrams and plots
+# Diagrams and plots (unpinned numpy)
 matplotlib==3.9.2
 networkx==3.3
 graphviz==0.20.3
@@ -48,9 +48,8 @@ pytest-asyncio==0.24.0
 aiofiles==24.1.0
 python-multipart==0.0.9
 
-# FREE LOCAL LLM (required for full AI generation)
+# FREE LOCAL LLM (install torch separately)
 transformers==4.44.2
-torch==2.4.1
 bitsandbytes==0.44.0
 accelerate==0.34.2
 sentencepiece==0.2.0
