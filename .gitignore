@@ -1,0 +1,20 @@
+# .gitignore
+__pycache__/
+*.pyc
+.env
+.venv/
+node_modules/
+dist/
+build/
+*.log
+.DS_Store
+*.tmp
+*.bak
+*.swp
+*.sqlite3
+.idea/
+.vscode/
+.coverage
+htmlcov/
+*.egg-info/
+*.dist
