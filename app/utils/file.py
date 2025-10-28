@@ -1,9 +1,9 @@
-# app/utils/file.py
 import os
 import shutil
 from typing import Optional, List
 import hashlib
 import base64
+from pathlib import Path
 
 def read_file(path: str) -> str:
     """Safely read file content."""
@@ -68,3 +68,27 @@ def delete_path(path: str) -> bool:
         return True
     except:
         return False
+
+def list_files(root_dir: str, recursive: bool = True) -> List[str]:
+    """
+    Recursively list all non-hidden file paths under root_dir.
+    Returns absolute paths as strings.
+    Skips any file or directory starting with '.' (e.g., .git, .env).
+    """
+    root = Path(root_dir)
+    if not root.is_dir():
+        return []
+
+    files = []
+    if recursive:
+        for path in root.rglob("*"):
+            if path.is_file():
+                # Skip if any part of the relative path starts with '.'
+                rel_parts = path.relative_to(root).parts
+                if not any(part.startswith('.') for part in rel_parts):
+                    files.append(str(path.resolve()))
+    else:
+        for path in root.iterdir():
+            if path.is_file() and not path.name.startswith('.'):
+                files.append(str(path.resolve()))
+    return files
