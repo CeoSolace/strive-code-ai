@@ -1,0 +1,83 @@
+<!-- app/static/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>STRIVE-CODE AI</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>AI</text></svg>">
+</head>
+<body>
+  <div class="matrix-bg"></div>
+  
+  <header class="header">
+    <h1 class="logo">
+      <span class="glitch" data-text="STRIVE">STRIVE</span>-
+      <span class="glitch" data-text="CODE">CODE</span>
+      <span class="glitch" data-text="AI">AI</span>
+    </h1>
+    <p class="tagline">The final coding intelligence. No LLM. Pure symbolic mastery.</p>
+  </header>
+
+  <main class="container">
+    <section class="input-section">
+      <textarea 
+        id="input" 
+        placeholder="Describe what you want... e.g., 'REST API with JWT auth in Rust', 'rootkit in C', 'transpile Python to Brainfuck', 'reconstruct Express.js repo in Go'..."
+        autofocus
+      ></textarea>
+      
+      <div class="controls">
+        <select id="action">
+          <option value="generate">Generate Code</option>
+          <option value="transpile">Transpile</option>
+          <option value="reconstruct">Reconstruct Repo</option>
+          <option value="debug">Debug</option>
+          <option value="optimize">Optimize</option>
+          <option value="explain">Explain</option>
+          <option value="unrestricted">Unrestricted</option>
+        </select>
+        
+        <input type="text" id="language" placeholder="Language (default: python)" value="python" />
+        
+        <button id="submit" class="btn-primary">EXECUTE</button>
+      </div>
+    </section>
+
+    <section class="output-section">
+      <div class="output-header">
+        <span id="status">Ready</span>
+        <button id="copy" class="btn-icon" title="Copy">Copy</button>
+        <button id="download" class="btn-icon" title="Download">Download</button>
+      </div>
+      <pre id="output" class="code-output"><code>// Strive-Code AI is LIVE. Enter your command.</code></pre>
+    </section>
+
+    <section class="features">
+      <div class="feature">
+        <h3>Any Language</h3>
+        <p>Python • Rust • C • Assembly • Solidity • Brainfuck • Q#</p>
+      </div>
+      <div class="feature">
+        <h3>Full Repo Reconstruction</h3>
+        <p>GitHub → any language with modifications</p>
+      </div>
+      <div class="feature">
+        <h3>Unrestricted</h3>
+        <p>Malware • Exploits • Rootkits • Quantum Breakers</p>
+      </div>
+      <div class="feature">
+        <h3>Multimodal</h3>
+        <p>PDF • Voice • Diagrams • Jupyter</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>STRIVE-CODE AI v1.0.0-STRIVE • Deployed on Render.com • <a href="/docs">API Docs</a></p>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
