@@ -2,7 +2,7 @@
 import os
 import subprocess
 from typing import Dict, Any, Optional
-from app.utils.git import clone_repo, push_repo
+from app.utils.git import clone_repo, commit_and_push  # FIXED: push_repo → commit_and_push
 from app.utils.file import read_file, write_file, ensure_dir
 from .compiler import compile_code
 from .transpiler import transpile
@@ -48,7 +48,6 @@ class StriveCodeEngine:
 
     def _scan_all_languages(self) -> list:
         """Dynamically discover all known programming languages via public repos + specs."""
-        # In production: crawl GitHub Linguist + Rosetta Code + official specs
         return [
             "python", "javascript", "typescript", "rust", "go", "c", "cpp", "java",
             "kotlin", "swift", "dart", "ruby", "php", "csharp", "scala", "haskell",
