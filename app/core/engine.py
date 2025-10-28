@@ -2,7 +2,7 @@
 import os
 import subprocess
 from typing import Dict, Any, Optional
-from app.utils.git import clone_repo, commit_and_push  # FIXED: push_repo → commit_and_push
+from app.utils.git import clone_repo, commit_and_push
 from app.utils.file import read_file, write_file, ensure_dir
 from .compiler import compile_code
 from .transpiler import transpile
@@ -15,6 +15,7 @@ from .reconstructor import reconstruct_repo
 from .multimodal import generate_pdf, generate_diagram, generate_voice
 from .self_improve import upgrade_system
 from .unrestricted import generate_unrestricted
+
 
 class StriveCodeEngine:
     """
@@ -55,6 +56,33 @@ class StriveCodeEngine:
             "move", "zig", "carbon", "ocaml", "fsharp", "racket", "scheme", "lisp",
             "assembly", "brainfuck", "whitespace", "malbolge", "befunge", "qsharp"
         ]
+
+    def _load_universal_patterns(self) -> list:
+        """Load universal programming patterns (e.g., algorithmic and structural idioms)."""
+        return [
+            "map", "filter", "reduce",
+            "observer", "strategy", "factory", "singleton", "command",
+            "async-await", "promise", "callback", "event-loop",
+            "recursive-descent", "state-machine", "pipeline", "visitor",
+            "dependency-injection", "currying", "memoization", "lazy-evaluation"
+        ]
+
+    def _detect_framework_signatures(self) -> dict:
+        """Stub: detect common framework signatures (e.g., Express, FastAPI, React)."""
+        return {
+            "web": ["fastapi", "flask", "express", "django", "nextjs", "svelte"],
+            "mobile": ["react-native", "flutter", "swiftui", "jetpack-compose"],
+            "ml": ["pytorch", "tensorflow", "scikit-learn", "jax"]
+        }
+
+    def _compile_idiomatic_constructs(self) -> dict:
+        """Stub: idiomatic code constructs per language."""
+        return {
+            "python": ["list-comprehension", "context-manager", "decorator"],
+            "javascript": ["arrow-function", "destructuring", "optional-chaining"],
+            "rust": ["match", "ownership", "lifetime", "trait"],
+            "go": ["goroutine", "channel", "defer"]
+        }
 
     def _get_supported_compilers(self) -> Dict[str, str]:
         return {
